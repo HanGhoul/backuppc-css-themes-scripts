@@ -203,31 +203,46 @@ a:hover {
     text-decoration: none;
 }
 
-/* Primary */
+/* Primary (Content) */
 #Content a {
     color: var(--color-primary-link);
 }
 #Content a:hover {
-    color: var(--color-primary-text);
+    text-decoration: underline;
 }
 
-/* Secondary */
+/* Secondary (Navigation) */
 #navigation-container a {
     display: block;
     line-height: 1.8em;
     white-space: nowrap;
-    color: var(--color-secondary-link) !important;
+    color: var(--color-secondary-link);
 }
 #navigation-container a:hover {
-    color: var(--color-primary-link) !important;
+    color: var(--color-primary-link);
+}
+a.NavCurrent {
+    color: var(--color-primary-link) !important;;
 }
 
 /* Table head */
 tr.tableheader a {
-    color: var(--color-table-head-link) !important;
+    color: var(--color-table-head-link);
 }
 tr.tableheader a:hover {
     color: var(--color-table-head-text) !important;
+    text-decoration: none !important;
+}
+
+/* Config & Host editor tabs */
+td.editTabSel a:hover, td.editTabNoSel a:hover {
+    text-decoration: none !important;
+}
+.editTabSel a {
+    color: var(--color-secondary-link) !important;
+}
+.editTabNoSel a:hover {
+    color: var(--color-secondary-link) !important;
 }
 
 /* ==========
@@ -339,7 +354,7 @@ td.fviewon, td.fviewon a {
     color: var(--color-secondary-text) !important;
 }
 
-/* Config editor */
+/* Config & Host editor */
 table.editSubTable td {
     border: unset;
 }
@@ -349,8 +364,9 @@ table.editSubTable table {
 td.editTabSel  {
     background-color: var(--color-secondary-background);
 }
-td.editTabSel a:hover, td.editTabNoSel a:hover {
-    color: var(--color-heading-text) !important;
+td.editTabSel, td.editTabNoSel  {
+    padding-left: var(--body-padding-fraction-l) !important;
+    padding-right: var(--body-padding-fraction-l) !important;
 }
 .editSaveButton {
     margin-bottom: var(--body-padding-fraction-l);
