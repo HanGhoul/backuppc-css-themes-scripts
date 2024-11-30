@@ -87,6 +87,9 @@ img[src*="cgi"] {
 strong, dt {
     color: var(--color-highlight-text);
 }
+p + table, p + p {
+    margin-top: var(--body-padding-fraction-s);
+}
 code, pre, tt {
     font: var(--font-mono);
     color: var(--color-secondary-text);
