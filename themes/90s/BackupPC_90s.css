@@ -311,11 +311,17 @@ tr[bgcolor="#ffcccc"],
 tr[bgcolor="#ff9900"],
 tr[bgcolor="#d1d1d1"],
 tr[bgcolor="#ffff99"] {
-    color: var(--color-highlight-text);
     background-image: repeating-linear-gradient(48.5deg,
       hsla(0, 0%, 0%, 0.02),
       hsla(0, 0%, 0%, 0.02) 16px,
       transparent 0, transparent 30px) !important;
+}
+tr[bgcolor="#66cc99"],
+tr[bgcolor="#ccffcc"],
+tr[bgcolor="#ffcccc"],
+tr[bgcolor="#ff9900"],
+tr[bgcolor="#ffff99"] { /* No text highlight for disabled hosts */
+    color: var(--color-highlight-text);
 }
 tr[bgcolor="#66cc99"] { /* Status: Active/In progress */
     background: var(--color-status-active);
