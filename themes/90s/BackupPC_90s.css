@@ -414,7 +414,8 @@ select {
 }
 
 /* Navigation: Host selection */
-.NavMenu select {
+.NavMenu select,
+#navigation-container select {
     width: 100%;
 }
 
