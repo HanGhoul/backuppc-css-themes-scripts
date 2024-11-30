@@ -492,7 +492,8 @@ input,select {
 	border-radius:3px;
 }
 
-.NavMenu > select,.NavMenu > form {
+.NavMenu > select,.NavMenu > form,
+#navigation-container select {
 	font-size:13px;
 	margin-top:8px;
 	margin-bottom:8px;
