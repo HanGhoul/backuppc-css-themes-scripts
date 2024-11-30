@@ -377,6 +377,13 @@ span.editError {
     color: var(--color-highlight-text);
     background: var(--color-status-failed);
 }
+span.editError:empty:first-child::after {
+    content: "Saved";
+}
+span.editError:empty:first-child {
+    display: block;
+    background-color: var(--color-status-done);
+}
 
 /* =============
    Form elements
