@@ -65,6 +65,8 @@ body {
     display: flex;
     margin: var(--body-margin);
     text-shadow: var(--text-shadow);
+    text-align: justify;
+    text-justify: inter-character;
     background: var(--color-primary-background);
 }
 body, table {
