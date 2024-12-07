@@ -10,7 +10,7 @@ You can also use the normal Javascript (`script.js`) and append the code to Back
 
 |Description|Preview|
 |---|---|
-|<h2>Hosts Selection to Top</h2><p>JS/Userscript to move the navigation's hosts selection to the top. Thanks ChatGPT.</p><p><sub>Added 2024-11-30</sub></p>|[<img src="assets/previews/host2top.png" alt="Modern" width="180"/>](assets/previews/host2top.png)|
+|<h2>Hosts Selection to Top</h2><p>JS/Userscript to move the navigation's hosts selection to the top. Thanks ChatGPT.</p>|[<img src="assets/previews/host2top.png" alt="Modern" width="180"/>](assets/previews/host2top.png)|
 
 ## Themes
 
@@ -28,9 +28,9 @@ You can also use the normal Javascript (`script.js`) and append the code to Back
 
 |Description|Preview|
 |---|---|
-|<h2>90s</h2><p>Retro theme with SNES/Famicom colors using [raphnet.net/design/console_colors](https://www.raphnet.net/design/console_colors/index_en.php) as reference.</p><p><sub>Added 2024-11-02, updated 2024-11-30</sub></p>|[<img src="assets/previews/90s.png" alt="Modern" width="480"/>](assets/previews/90s.png)|
-|<h2>Modern</h2><p>Heavily inspired by INSPINIA Bootstrap Theme.</p><h3>Troubleshooting</h3><p>If the host menu is out of place, change the <tt>margin-top</tt> values in:</p><pre>br + div[class="NavMenu"] {}<br>div[class="NavMenu"] + div[class="NavMenu"] {}</pre><p><sub>Added 2017-09-04, updated 2024-11-30</sub></p>|[<img src="assets/previews/modern.png" alt="Modern" width="480"/>](assets/previews/modern.png)|
-|<h2>reset.css</h2><p>Resets CSS and some BackupPC quirks to start building your own theme on.</p><p>Clear <tt>$Conf{CgiCSSFile}</tt> before you start and use a userstyle editor like Stylish.</p><p><sub>Added 2024-11-02, updated 2024-11-03</sub></p>|[<img src="assets/previews/reset.png" alt="Modern" width="480"/>](assets/previews/reset.png)|
+|<h2>90s</h2><p>Retro theme with SNES/Famicom colors using [raphnet.net/design/console_colors](https://www.raphnet.net/design/console_colors/index_en.php) as reference.</p>|[<img src="assets/previews/90s.png" alt="Modern" width="480"/>](assets/previews/90s.png)|
+|<h2>Modern</h2><p>Heavily inspired by INSPINIA Bootstrap Theme.</p><h3>Troubleshooting</h3><p>If the host menu is out of place, change the <tt>margin-top</tt> values in:</p><pre>br + div[class="NavMenu"] {}<br>div[class="NavMenu"] + div[class="NavMenu"] {}</pre>|[<img src="assets/previews/modern.png" alt="Modern" width="480"/>](assets/previews/modern.png)|
+|<h2>reset.css</h2><p>Resets CSS and some BackupPC quirks to start building your own theme on.</p><p>Clear <tt>$Conf{CgiCSSFile}</tt> before you start and use a userstyle editor like Stylish.</p>|[<img src="assets/previews/reset.png" alt="Modern" width="480"/>](assets/previews/reset.png)|
 
 ## Troubleshooting
 
