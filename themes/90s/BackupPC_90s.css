@@ -465,6 +465,22 @@ input[type="checkbox"]:checked {
     margin-bottom: var(--body-padding-fraction-l);
 }
 
+/* Documentation sub-headers */
+dt {
+    display: flex;
+    align-items: center;
+    margin-top: calc(var(--body-padding-fraction-l) * 2);
+    margin-bottom: var(--body-padding-fraction-s);
+    font-size-adjust: 0.57;
+}
+dt::after {
+    flex-grow: 1;
+    content: "";
+    height: 1px;
+    background-color: var(--color-secondary-background);
+    margin-left: var(--body-padding-fraction-l);
+}
+
 /* Fix weird documentation header */
 td._podblock_, table[border="0"][width="100%"][cellspacing="0"][cellpadding="3"] {
     background: var(--color-secondary-background) !important;
