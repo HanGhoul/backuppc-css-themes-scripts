@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        BackupPC Host Selection to Top
 // @description Detach and move the first <h2> and <select> from #NavMenu to after #logo-container
-// @namespace   https://github.com/HanGhoul/backuppc-themes
+// @namespace   https://github.com/HanGhoul/backuppc-css-themes-scripts
 // @version     1.0
 // @match       *://example.com/*
 // @grant       none
