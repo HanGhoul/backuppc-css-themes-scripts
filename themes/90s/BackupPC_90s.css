@@ -18,6 +18,9 @@
 
     --image-filter: invert(.9);
 
+    /* Number of columns for table of contents on 'Documentation' page */
+    --docs-toc-columns: 3;
+
     --logo: url('https://raw.githubusercontent.com/HanGhoul/backuppc-themes/master/themes/90s/logo_90s_190x72.png');
     --logo-width: 190px;
     --logo-height: 72px;
@@ -448,10 +451,21 @@ input[type="checkbox"]:checked {
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuLjAwMSIvPjwvc3ZnPg==");
 }
 
-/* =================================
-   Fix weird documentation header at
-   /index.cgi?action=view&type=docs
-   ================================= */
+/* =============
+   Documentation
+   ============= */
+/* Split table of contents in 3 columns */
+#index {
+    columns: var(--docs-toc-columns);
+}
+#index li {
+    break-inside: avoid;
+}
+#index ul {
+    margin-bottom: var(--body-padding-fraction-l);
+}
+
+/* Fix weird documentation header */
 td._podblock_, table[border="0"][width="100%"][cellspacing="0"][cellpadding="3"] {
     background: var(--color-secondary-background) !important;
 }
