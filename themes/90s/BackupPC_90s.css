@@ -101,8 +101,8 @@ tt {
     padding: calc(var(--body-padding-fraction-s) / 2) var(--body-padding-fraction-s);
 }
 pre {
-    margin-top: var(--body-padding-fraction-s);
-    padding: 0px var(--body-padding-fraction-s);
+    margin: var(--body-padding-fraction-l) 0px;
+    padding: var(--body-padding-fraction-s) var(--body-padding-fraction-l);
     background: var(--border-primary-sink);
     border: var(--border-ui-width) var(--border-ui-style) var(--color-secondary-background);;
 }
