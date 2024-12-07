@@ -104,20 +104,7 @@ pre {
     margin-top: var(--body-padding-fraction-s);
     padding: 0px var(--body-padding-fraction-s);
     background: var(--border-primary-sink);
-}
-pre:before, pre:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: var(--border-table-width);
-    background: var(--color-primary-link);
-    white-space: pre;
-}
-pre:before {
-    margin-bottom: var(--body-padding-fraction-l);
-}
-pre:after {
-    margin-top: var(--body-padding-fraction-l);
+    border: var(--border-ui-width) var(--border-ui-style) var(--color-secondary-background);;
 }
 
 /* =======
