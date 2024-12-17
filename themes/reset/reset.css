@@ -1,56 +1,66 @@
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.5.6/reboot.min.css');
 
+/* ===============
+   2 column-layout
+ (Navigation|Content)
+   =============== */
+/*
 body {
     display: flex;
-    height: 100vh;
-}
-code, pre, tt {
-    font-family: monospace;
-}
-
-/* Cleanup */
-h1 + br, /* Single br after h1 in /index.cgi?action=adminOpts */
-p:empty,
-pre:empty,
-span:empty {
-    display: none;
-}
-p, ul {
-    margin-bottom: unset;
-}
-table {
-    border: unset;
-}
-table[bgcolor="#ffffff"], td[bgcolor="#ffffff"] {
-    background: transparent;
-}
-
-/* Navigation */
-#NavMenu, .NavMenu {
-    height: unset !important;
-}
-#navigation-container {
-    height: 100%;
 }
 #navigation-container a {
     display: block;
 }
-#Content {
-    flex-grow: 1;
+*/
+
+/* =======================
+   Unset navigation height
+ A must for 1-column layouts
+   ======================= */
+.NavMenu {
+    height: unset !important;
 }
 
-/* Content browser */
+/* =======
+   Cleanup
+   ======= */
+/* Fixed-width font for code, logs & paths */
+code, pre, tt {
+    font-family: monospace;
+}
+
+/* Remove empty & useless elements */
+p:empty,
+pre:empty,
+span:empty,
+/* Single br after h1 in '/index.cgi?action=adminOpts' */
+h1 + br,
+/* Heading Type Table at the very bottom of '/index.cgi?action=view&type=docs' */
+table[border="0"][width="100%"][cellspacing="0"][cellpadding="3"]:last-of-type {
+    display: none;
+}
+
+span.sortarrow {
+    display: initial;
+}
+
+p, ul {
+    margin-bottom: unset;
+}
+
+table[bgcolor="#ffffff"], td[bgcolor="#ffffff"] {
+    background: transparent;
+}
+
+/* Content browser - Remove unecessary borders */
 table[width="100%"] td[valign="top"],
 td[width="3%"],
 td[width="30%"] td {
     border: unset;
-    line-height: 13px;
-}
-td[width="30%"] td {
-    font-family: monospace;
 }
 
-/* Documentation */
-table[border="0"][width="100%"][cellspacing="0"][cellpadding="3"]:last-of-type {
-    display: none;
+/* Content browser - Fixed line height to join tree icons & Fixed-width font */
+td[width="30%"] td {
+    line-height: 13px;
+    font-family: monospace;
 }
