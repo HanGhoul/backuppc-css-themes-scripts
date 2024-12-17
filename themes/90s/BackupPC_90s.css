@@ -511,7 +511,7 @@ table[border="0"][width="100%"][cellspacing="0"][cellpadding="3"]:last-of-type {
 /* ==================
    Font Awesome icons
    ================== */
-.NavMenu a:before {
+.NavMenu a::before {
     display: inline-block;
     width: 1em;
     font-family: "Font Awesome 6 Free";
