@@ -296,10 +296,16 @@ pre {
     background-color: var(--nav-clr-link-bg-line2-hover);
     color: var(--nav-clr-link-hover);
 }
-.NavMenu a:hover {
+.NavMenu.host a.NavCurrent {
+    background-color: var(--nav-clr-bg-line1);
+    color: var(--nav-clr-link-hover);
+}
+.NavMenu a:hover,
+.NavMenu a.NavCurrent {
     background-color: var(--nav-clr-link-bg-line3-hover);
     color: var(--nav-clr-bg-line3);
 }
+
 
 /* =======
    Content
