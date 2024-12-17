@@ -1,0 +1,761 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.5.6/reboot.min.css');
+@import url('https://use.fontawesome.com/releases/v6.6.0/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400..500&display=swap');
+
+/* =====
+   To-do (or not to-do)
+   * Fix padding of some of the 'Add' buttons in config editor
+   ===== */
+
+:root {
+    /* =======
+       Padding
+       ======= */
+    --padding-null:      0em;
+    --padding-scale-0_5: calc(var(--padding-scale-1) / 2);
+    --padding-scale-1:   0.7em;
+    --padding-scale-2:   calc(var(--padding-scale-1) * 2);
+    --padding-scale-4:   calc(var(--padding-scale-1) * 4);
+
+    /* ======
+       Global
+       ====== */
+    /* Backgrounds */
+    --clr-bg-body: Black;
+    --clr-bg-content: #141a24;
+    --clr-bg-elements: #275a8d;
+
+    /* Text */
+    --clr-text: #e0e0e0;
+    --clr-text-highlight: White;
+    --clr-text-ease: Darkgray;
+    --clr-text-heading: var(--clr-text-highlight);
+
+    /* Links */
+    --clr-link: #6587b4;
+    --clr-link-hover: #b099dd;
+
+    /* ======
+       Images
+       ====== */
+    --filter-logo: invert(1);
+    --filter-tree_icons: invert(.9);
+
+    /* Logo */
+    --logo-url: url('/image/logo320.png');
+    --logo-width: 96px;
+    --logo-height: 22px;
+
+    /* =====
+       Fonts
+       ===== */
+    --font-default-size: 13px;  /* Used to calculate '--form-checkbox-size' */
+
+    /* Sans-serif */
+    --font-sans-family: "Verdana Pro", "Verdana", "Arial", "Helvetica", sans-serif;
+    --font-sans: var(--font-default-size)/1.5em var(--font-sans-family);
+
+    /* Fixed-width */
+    --font-mono-family: "SF Mono", "Consolas", monospace;
+    --font-mono: var(--font-default-size)/1.4em var(--font-mono-family);
+
+    /* Headings */
+    --font-h-weight: 400;
+    --font-h-height: 1.15em;
+    --font-h1: var(--font-h-weight) 24px/var(--font-h-height) var(--font-sans-family);
+    --font-h2: var(--font-h-weight) 20px/var(--font-h-height) var(--font-sans-family);
+    --font-h3: var(--font-h-weight) 17px/var(--font-h-height) var(--font-sans-family);
+    
+    /* Table headings */
+    --font-thead: 450 1.3em/1.6em "Roboto Condensed";
+
+    /* ==========
+       Navigation
+       ========== */
+    --nav-min-height-line1: calc(var(--logo-height) + var(--padding-scale-2));
+    --nav-min-height-line2: calc(var(--padding-scale-1) * 4.111);
+    --nav-min-height-line3: calc(var(--padding-scale-1) * 3.333);
+
+    --nav-clr-bg-line1: #284371;
+    --nav-clr-bg-line2: #1d2b44;
+    --nav-clr-bg-line3: #07070a;
+    --nav-clr-link-bg-line1-hover: #1d3153;
+    --nav-clr-link-bg-line2-hover: #172236;
+    --nav-clr-link-bg-line3-hover: var(--clr-text);
+
+    --nav-clr-link: var(--clr-text);
+    --nav-clr-link-hover: var(--clr-text-highlight);
+
+    /* ======
+       Tables
+       ====== */
+    /* Borders */
+    --border-table-width: 1px;  /* Used for calculation on 'Documentation' page */
+    --border-table-color: var(--table-clr-head-bg);
+    --border-table-style: solid;
+
+    /* Headings */
+    --table-clr-head-bg: #2e3a52;
+    --table-clr-head-hover: #253247;
+
+    --table-clr-head-text: var(--clr-text-highlight);
+    --table-clr-head-link: #4f95db;
+    --table-clr-head-link-hover: #5983c2;
+
+    /* Zebra striped rows */
+    --table-clr-zebra-bg-light: #1d242f;
+    --table-clr-zebra-bg-dark: #171d26;
+
+    /* Backup status colored rows */
+    --table-clr-bg-status-active: #275a8d;
+    --table-clr-bg-status-done: #2d6236;
+    --table-clr-bg-status-failed: #da3412;
+    --table-clr-bg-status-cancelled: #833a87;
+    --table-clr-bg-status-disabled: #634438;
+    --table-clr-bg-status-noping: var(--table-clr-bg-status-failed);
+    --table-bg-status: repeating-linear-gradient(48.5deg,
+    hsla(0, 0%, 0%, 0.09),
+    hsla(0, 0%, 0%, 0.09) 16px,
+    transparent 0, transparent 30px);
+
+     /* =====
+        Forms
+        ===== */
+    --form-checkbox-size: calc(var(--font-default-size) * 1.333);
+
+    /* Borders */
+    --form-border-width: 1px;
+    --form-border-style: solid;
+
+    /* Form elements */
+    --form-input-clr-bg: #272d38;
+    --form-input-clr-bg-active: #313947;
+    --form-input-clr-border: #5f636a;
+    --form-input-clr-border-active: #647493;
+    
+    --form-select-clr-bg: #141a24;
+    --form-select-clr-bg-hover: #313947;
+    --form-select-clr-border: #5f636a;
+    --form-select-clr-border-hover: #5f636a;
+    
+    --form-button-clr-bg: #1a4c6b;
+    --form-button-clr-bg-hover: #153d56;
+    --form-button-clr-border: #117abb;
+    --form-button-clr-border-hover: #0f6ba4;
+}
+
+/* =======
+   General
+   ======= */
+body {
+    /*letter-spacing: .02em;*/
+    text-rendering: optimizeLegibility;
+    background: var(--clr-bg-body);
+}
+body, table {
+    color: var(--clr-text);
+    font: var(--font-sans);
+}
+strong, dt {
+    color: var(--clr-text-highlight);
+}
+p + table, p + p {
+    margin-top: var(--padding-scale-1);
+}
+code, pre, tt {
+    font: var(--font-mono);
+    color: var(--clr-text-highlight);
+}
+pre, tt {
+    background: var(--form-input-clr-bg);
+    border: var(--form-border-width) var(--form-border-style) var(--form-input-clr-border);
+    padding: calc(var(--padding-scale-0_5) / 3) var(--padding-scale-0_5);
+}
+pre {
+    margin: var(--padding-scale-2) 0px;
+    padding: calc(var(--padding-scale-0_5) / 2) var(--padding-scale-1);
+}
+#Content a {
+    color: var(--clr-link);
+}
+#Content a:hover {
+    color: var(--clr-link-hover);
+    text-decoration: underline;
+}
+
+/* ====
+   Logo
+   ==== */
+#logo-container > a {
+    display: none;
+}
+#logo-container::after {
+    display: inline-block;
+    content: "";
+    width: var(--logo-width);
+    height: var(--logo-height);
+    background-image: var(--logo-url);
+    background-size: var(--logo-width) auto;
+    background-repeat: no-repeat;
+    filter: var(--filter-logo);
+}
+
+/* ==========
+   Navigation
+   ========== */
+
+/* Grid Setup */
+#navigation-container {
+    display: grid;
+    grid-template-columns: calc(var(--logo-width) + var(--padding-scale-2) * 3) auto;
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: var(--padding-null);
+    grid-row-gap: var(--padding-null);
+    background-color: var(--nav-clr-bg-line1);
+}
+
+#logo-container        { grid-area: 1 / 1 / 2 / 2; background-color: var(--nav-clr-bg-line1); padding-left: var(--padding-scale-4); min-height: var(--logo-height); height: var(--nav-min-height-line1); }  /* Logo */
+#NavMenu > select      { grid-area: 1 / 2 / 2 / 3; background-color: var(--nav-clr-bg-line1); padding-left: var(--padding-scale-1); min-height: var(--logo-height); height: var(--nav-min-height-line1); }  /* Hosts Selection */
+.NavMenu.section-title { grid-area: 2 / 1 / 3 / 2; background-color: var(--nav-clr-bg-line2); padding-left: var(--padding-scale-4); min-height: var(--nav-min-height-line2); }  /* Host Heading */
+.NavMenu.host          { grid-area: 2 / 2 / 3 / 3; background-color: var(--nav-clr-bg-line2);                                       min-height: var(--nav-min-height-line2); }  /* Host Menu */
+#NavMenu.NavMenu h2    { grid-area: 3 / 1 / 4 / 2; background-color: var(--nav-clr-bg-line3); padding-left: var(--padding-scale-4); min-height: var(--nav-min-height-line3); }  /* Server Heading */
+#NavMenu.NavMenu       { grid-area: 3 / 2 / 4 / 3; background-color: var(--nav-clr-bg-line3);                                       min-height: var(--nav-min-height-line3); }  /* Server Menu */
+
+/* Center Elements */
+#logo-container,
+.NavMenu.section-title,
+#NavMenu.NavMenu h2,
+.NavMenu a {
+    display: flex;
+    align-items: center;
+}
+#NavMenu,
+.NavMenu.host {
+    display: flex;
+}
+
+/* Headings */
+.NavTitle {
+    margin: unset;
+    font-size: var(--font-default-size);
+    color: var(--clr-text-highlight);
+}
+
+/* Remove Host Selection Heading */
+#NavMenu > h2:nth-child(1) {
+    display: none;
+}
+
+/* Server Heading */
+#NavMenu.NavMenu h2 {
+    position: absolute;
+    left: 0;
+    width: 75%;
+}
+
+/* Icons */
+.NavTitle::before {
+    font-size: var(--font-default-size);
+    width: 1em;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    text-align: center;
+}
+.NavMenu.section-title h2.NavTitle::before {
+    content: "\e163";
+    margin-right: var(--padding-scale-1);
+}
+#NavMenu.NavMenu h2.NavTitle::before {
+    content: "\f233";
+    margin-right: calc(var(--padding-scale-1) + 1px);
+}
+
+/* Hosts Select */
+#NavMenu > select {
+    position: absolute;
+    top: 0;
+    border: unset;
+    cursor: pointer;
+}
+#NavMenu > select:hover,
+#NavMenu > select:focus {
+    background-color: var(--nav-clr-link-bg-line1-hover);
+}
+
+/* Links */
+.NavMenu a {
+    z-index: 1;
+    padding: var(--padding-scale-0_5) var(--padding-scale-1);
+    white-space: nowrap;
+    color: var(--nav-clr-link);
+}
+.NavMenu a:hover {
+    text-decoration: none;
+}
+.NavMenu.host a:hover {
+    background-color: var(--nav-clr-link-bg-line2-hover);
+    color: var(--nav-clr-link-hover);
+}
+.NavMenu a:hover {
+    background-color: var(--nav-clr-link-bg-line3-hover);
+    color: var(--nav-clr-bg-line3);
+}
+
+/* =======
+   Content
+   ======= */
+#Content {
+    background: var(--clr-bg-content);
+    padding: var(--padding-scale-2) var(--padding-scale-4) calc(var(--padding-scale-4) * 2) var(--padding-scale-4);
+}
+
+/* ================
+   Content Headings
+   ================ */
+#Content h1,
+#Content h2,
+#Content dt {
+    margin-bottom: calc(var(--padding-scale-1) * 0.75);
+    color: var(--clr-text-heading);
+}
+#Content h1 {
+    font: var(--font-h1);
+}
+#Content h1:not(:first-child),  /* Multiple H1 in Documentation */
+#Content h2,
+#Content dt {
+    margin-top: calc(var(--padding-scale-1) * 1.5);
+    font: var(--font-h2);
+}
+#Content dt {
+    font: var(--font-h3);
+}
+
+/* ======
+   Tables
+   ====== */
+table {
+    border: var(--border-table-width) var(--border-table-style) var(--border-table-color);
+}
+table.tableStnd,
+table.sortable {
+    width: 100%;
+}
+table[bgcolor="#ffffff"], td[bgcolor="#ffffff"] {
+    background: transparent;
+}
+td {
+    border: var(--border-table-width) var(--border-table-style) var(--border-table-color);
+    padding: calc(var(--padding-scale-1) * 0.666 );
+}
+.sortable td {
+    border: unset;
+}
+/* Reset width for 'Admin Options' */
+#Content form table.tableStnd {
+    width: unset;
+}
+
+/* =============
+   Table headers
+   & editor tabs
+   ============= */
+
+/* Table Headers w/ Links */
+.tableheader.sortheader td,
+/* SubTable "Add" Buttons */
+table.editSubTable tbody tr td,
+.tableheader td {
+    border: unset !important;
+    padding: unset;
+}
+
+/* Table header links */
+a.sortheader,
+/* Editor tab links */
+.editTabNoSel a,
+.editTabSel a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: var(--padding-scale-0_5);
+    white-space: nowrap;
+    font: var(--font-thead);
+    color: var(--table-clr-head-link) !important;
+    background-color: var(--table-clr-head-bg);
+}
+
+/* Workaround for empty sortable header not stretching height */
+.sortarrow:empty::before {
+    content: " ";
+}
+
+/* Table Headers w/o Links */
+.editHeader,
+.tableheader td[colspan] {
+    padding: var(--padding-scale-0_5);
+    border: var(--border-table-width) var(--border-table-style) var(--border-table-color);
+    background-color: var(--table-clr-head-bg);
+}
+
+/* Table header links */
+a.sortheader:hover,
+/* Editor tab links */
+.editTabNoSel a:hover,
+.editTabSel a:hover {
+    text-decoration: none !important; 
+    color: var(--table-clr-head-link-hover) !important;
+    background: var(--table-clr-head-hover) !important;
+}
+
+/* ============
+   Zebra Tables
+   ============ */
+table.sortable tr:nth-of-type(even) td {
+    background-color: var(--table-clr-zebra-bg-light);
+}
+table.sortable tr:nth-of-type(odd) td {
+    background-color: var(--table-clr-zebra-bg-dark);
+}
+
+/* =============
+   Status Colors
+   ============= */
+/* Remove Zebra background */
+tr[bgcolor="#66cc99"] td,
+tr[bgcolor="#ccffcc"] td,
+tr[bgcolor="#ffcccc"] td,
+tr[bgcolor="#ff9900"] td,
+tr[bgcolor="#d1d1d1"] td,
+tr[bgcolor="#ffff99"] td {
+    background-color: unset !important;
+}
+
+/* Striped background pattern */
+tr[bgcolor="#66cc99"],
+tr[bgcolor="#ccffcc"],
+tr[bgcolor="#ffcccc"],
+tr[bgcolor="#ff9900"],
+tr[bgcolor="#d1d1d1"],
+tr[bgcolor="#ffff99"] {
+    background-image: var(--table-bg-status);
+}
+
+/* Highlight text for colored rows */
+tr[bgcolor="#66cc99"],
+tr[bgcolor="#ccffcc"],
+tr[bgcolor="#ffcccc"],
+tr[bgcolor="#ff9900"],
+tr[bgcolor="#ffff99"] {  /* No text highlight for disabled hosts */
+    color: var(--clr-text-highlight);
+}
+
+/* Status colors */
+tr[bgcolor="#66cc99"] { /* Status: Active/In progress */
+    background: var(--table-clr-bg-status-active) !important;
+}
+tr[bgcolor="#ccffcc"] { /* Status: Done */
+    background: var(--table-clr-bg-status-done) !important;
+}
+tr[bgcolor="#ffcccc"] { /* Status: Failed */
+    background: var(--table-clr-bg-status-failed) !important;
+}
+tr[bgcolor="#ff9900"] { /* Status: Cancelled by user */
+    background: var(--table-clr-bg-status-cancelled) !important;
+}
+tr[bgcolor="#d1d1d1"] { /* Status: Disabled */
+    background-color: var(--table-clr-bg-status-disabled) !important;
+    color: var(--clr-text-ease);
+}
+tr[bgcolor="#ffff99"] { /* Status: No ping */
+    background: var(--table-clr-bg-status-noping) !important;
+}
+
+/* ===============
+   Content Browser
+   =============== */
+form td.fviewon img,
+form td.fviewoff img {
+    filter: var(--filter-tree_icons);
+}
+
+/* Content browser - Remove unecessary borders */
+table[width="100%"],
+td[valign="top"],
+td[width="3%"],
+td[width="30%"] table,
+td[width="30%"] td {
+    border: unset;
+}
+
+/* Content browser - Fixed line height to join tree icons & Fixed-width font */
+td[width="30%"] td {
+    line-height: 13px;
+    font-family: monospace;
+}
+td.fview, td.fviewon, td.fviewoff, td.fviewbold {
+    padding: unset;
+}
+td.fviewon, td.fviewon a {
+    font-weight: bold;
+    color: var(--clr-text-highlight) !important;
+}
+
+/* ====================
+   Config & Host Editor
+   ==================== */
+/* Save Button */
+.editSaveButton {
+    margin-bottom: var(--padding-scale-2);
+}
+
+/* Save Message */
+span.editError {
+    border: var(--border-table-width) var(--border-table-style) var(--border-primary-rise);
+    padding: calc(var(--padding-scale-0_5) / 2) var(--padding-scale-0_5);
+    color: var(--clr-text-highlight);
+    background: var(--table-clr-bg-status-failed);
+}
+span.editError:empty:first-child::after {
+    content: "Saved";
+}
+span.editError:empty:first-child {
+    display: block;
+    background-color: var(--table-clr-bg-status-done);
+}
+
+/* Tabs */
+.editTabSel,
+.editTabNoSel {
+    padding: unset;
+}
+.editTabNoSel a,
+.editTabSel a {
+    padding: var(--padding-scale-0_5) var(--padding-scale-2);
+}
+
+/* Active tab */
+.editTabSel a {
+    background-color: var(--table-clr-head-bg) !important
+}
+.editTabSel a b {
+    font-weight: unset; 
+}
+
+/* Inactive tab */
+.editTabNoSel a {
+    background-color: var(--table-clr-head-hover) !important;
+    color: var(--table-clr-head-link-hover) !important;
+}
+.editTabNoSel a:hover {
+    background-color: var(--table-clr-head-bg) !important;
+    color: var(--table-clr-head-link) !important;
+}
+
+/* Inner Tables */
+.editSubTable {
+    border: unset;
+}
+/* Add border to tables in inner table... */
+.editSubTable table {
+    border: var(--border-table-width) var(--border-table-style) var(--border-table-color) !important;
+}
+/* Padding for 'Hosts' tab */
+.editSubTable td {
+    padding: var(--padding-scale-0_5) !important;
+    border: unset;
+}
+/* Remove 'Add' button padding */
+.editSubTable td[colspan="2"] {
+    padding: unset !important;
+}
+
+/* =============
+   Form elements
+   ============= */
+form {
+    margin: var(--padding-scale-0_5) 0px;
+}
+select,
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+    color: unset;
+}
+select:hover,
+textarea:focus,
+input:focus,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    color: var(--clr-text-highlight);
+}
+
+/* Dropdown */
+select {
+    background-color: var(--form-select-clr-bg);
+    border: var(--form-border-width) var(--form-border-style) var(--form-select-clr-border);
+    padding: var(--padding-scale-0_5);
+}
+select:hover,
+select:focus {
+    border-color: var(--form-input-clr-border-hover);
+    background-color: var(--form-select-clr-bg-hover);
+}
+
+/* Inputs */
+textarea,
+input[type="text"] {
+    background-color: var(--form-input-clr-bg);
+    border: var(--form-border-width) var(--form-border-style) var(--form-input-clr-border);
+    padding: var(--padding-scale-0_5) var(--padding-scale-1);
+}
+textarea:focus,
+input[type="text"]:focus {
+    background-color: var(--form-input-clr-bg-active);
+    border-color: var(--form-input-clr-border-active);
+    outline: none;
+}
+
+/* Buttons */
+input[type="button"],
+input[type="submit"] {
+    background-color: var(--form-button-clr-bg);
+    border: var(--form-border-width) var(--form-border-style) var(--form-button-clr-border);
+    padding: var(--padding-scale-0_5) var(--padding-scale-1);
+}
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:focus,
+input[type="submit"]:focus  {
+    background-color: var(--form-button-clr-bg-hover);
+    border-color: var(--form-button-clr-border-hover);
+}
+input[type="button"]:active,
+input[type="submit"]:active {
+    color: unset;
+    background-color: var(--form-input-clr-bg-active);
+    border-color: var(--form-input-clr-border-active);
+}
+.sortable input[type="submit"] {
+    padding: var(--padding-null) var(--padding-scale-0_5);
+}
+
+/* Button: Unsaved changes */
+input[style="color: rgb(255, 0, 0);"] {
+    color: var(--clr-text-highlight) !important;
+    background-color: var(--table-clr-bg-status-failed);
+    border: var(--form-border-width) var(--form-border-style) var(--clr-text-highlight);
+}
+input[style="color: rgb(255, 0, 0);"]:hover,
+input[style="color: rgb(255, 0, 0);"]:focus {
+    color: var(--table-clr-bg-status-failed) !important;
+    background-color: var(--clr-text-highlight) !important;
+    border: var(--form-border-width) var(--form-border-style) var(--table-clr-bg-status-failed);
+}
+input[style="color: rgb(255, 0, 0);"]:active {
+    color: var(--clr-text-highlight) !important;
+    background-color: var(--table-clr-bg-status-failed) !important;
+    border: var(--form-border-width) var(--form-border-style) var(--clr-text-highlight);
+}
+
+/* Checkboxes */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    display: unset;
+    padding-left: var(--form-checkbox-size);  /* Fix checkbox size in Firefox */
+    height: var(--form-checkbox-size);  /* Fix checkbox size in Edge */
+}
+input[type="checkbox"]:checked {
+    background-color: var(--clr-bg-elements);
+    background-size: var(--font-default-size);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuLjAwMSIvPjwvc3ZnPg==");
+}
+
+/* =============
+   Documentation
+   ============= */
+/* Split table of contents in 3 columns */
+#index {
+    columns: 3;
+}
+#index li {
+    break-inside: avoid;
+}
+#index ul {
+    margin-bottom: var(--padding-scale-1);
+}
+
+/* Fix weird documentation header */
+
+td._podblock_, table[border="0"][width="100%"][cellspacing="0"][cellpadding="3"] {
+    padding: unset;
+    margin-left: calc(1px + var(--padding-scale-1) * -1) !important;
+    border: unset;
+    background: transparent !important;
+}
+span._podblock_ {
+    display: block;
+    font: var(--font-h1) !important;
+    padding-bottom: calc(var(--padding-scale-1) * 0.75);
+}
+
+/* Documentation sub-headers */
+dt {
+    display: flex;
+    align-items: center;
+    margin-left:  var(--padding-scale-1);
+}
+dt::after {
+    flex-grow: 1;
+    content: "";
+    height: var(--border-table-width);
+    background-color: var(--clr-bg-elements);
+    margin-left: var(--padding-scale-1);
+}
+dd,
+dd p {
+    margin-left:  var(--padding-scale-2);
+}
+
+/* =======================
+   Unset navigation height
+ A must for 1-column layouts
+   ======================= */
+.NavMenu {
+    height: unset !important;
+}
+
+/* =======
+   Cleanup
+   ======= */
+/* Fixed-width font for code, logs & paths */
+code, pre, tt {
+    font-family: var(--font-mono-family);
+}
+
+/* Remove empty & useless elements */
+hr,
+p:empty,
+pre:empty,
+span:empty,
+/* Single br after h1 in '/index.cgi?action=adminOpts' */
+h1 + br,
+/* Heading Type Table at the very bottom of '/index.cgi?action=view&type=docs' */
+table[border="0"][width="100%"][cellspacing="0"][cellpadding="3"]:last-of-type {
+    display: none;
+}
+
+span.sortarrow {
+    display: initial;
+}
+
+p, ul {
+    margin-bottom: var(--padding-scale-0_5);
+}
+
+table[bgcolor="#ffffff"], td[bgcolor="#ffffff"] {
+    background: transparent;
+}
