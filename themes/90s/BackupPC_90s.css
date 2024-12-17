@@ -293,7 +293,7 @@ table[bgcolor="#ffffff"], td[bgcolor="#ffffff"] {
     background: transparent;
 }
 
-tr.tableheader, td.editheader, tr.fviewheader {
+tr.tableheader td, td.editheader, tr.fviewheader {
     background: var(--color-table-head-background);
     color: var(--color-table-head-text);
     font-weight: bold;
