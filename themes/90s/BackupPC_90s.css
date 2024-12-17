@@ -442,6 +442,7 @@ input[type="checkbox"] {
     -webkit-appearance: none;
     display: unset;
     padding-left: var(--form-checkbox-size);
+    height: calc(var(--font-size) + var(--body-padding-fraction-s));
 }
 input[type="checkbox"]:checked {
     background-color: var(--color-secondary-background);
