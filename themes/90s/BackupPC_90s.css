@@ -362,10 +362,10 @@ table.editSubTable td {
 table.editSubTable table {
     border: var(--border-table-width) var(--border-table-style) var(--border-table-color);
 }
-td.editTabSel  {
+td.editTabSel {
     background-color: var(--color-secondary-background);
 }
-td.editTabSel, td.editTabNoSel  {
+td.editTabSel, td.editTabNoSel {
     padding-left: var(--body-padding-fraction-l) !important;
     padding-right: var(--body-padding-fraction-l) !important;
 }
