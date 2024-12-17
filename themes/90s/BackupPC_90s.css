@@ -594,6 +594,6 @@ table[border="0"][width="100%"][cellspacing="0"][cellpadding="3"]:last-of-type {
     content:"\f08e";
 }
 
-.NavMenu a[href="/"]:before {
+.NavMenu a[href="/"]::before {
     content:"\f015";
 }
