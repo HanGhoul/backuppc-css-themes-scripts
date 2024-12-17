@@ -521,76 +521,76 @@ table[border="0"][width="100%"][cellspacing="0"][cellpadding="3"]:last-of-type {
 }
 
 /* Computer */
-.NavMenu a[href^="/backuppc/index.cgi?host="]:before {
+.NavMenu a[href*="/index.cgi?host="]::before {
     content:"\f109";
 }
 
-.NavMenu a[href^="/backuppc/index.cgi?action=browse&host="]:before {
+.NavMenu a[href*="/index.cgi?action=browse&host="]::before {
     content:"\f0ca";
 }
 
-.NavMenu a[href^="/backuppc/index.cgi?action=view&type=LOG&host="]:before {
+.NavMenu a[href*="/index.cgi?action=view&type=LOG&host="]::before {
     content:"\f15c";
 }
 
-.NavMenu a[href^="/backuppc/index.cgi?action=LOGlist&host="]:before {
+.NavMenu a[href*="/index.cgi?action=LOGlist&host="]::before {
     content:"\f187";
 }
 
-.NavMenu a[href^="/backuppc/index.cgi?action=view&type=XferLOGbad&host="]:before {
+.NavMenu a[href*="/index.cgi?action=view&type=XferLOGbad&host="]::before {
     content:"\f06a";
 }
 
-.NavMenu a[href^="/backuppc/index.cgi?action=view&type=XferErrbad&host="]:before {
+.NavMenu a[href*="/index.cgi?action=view&type=XferErrbad&host="]::before {
     content:"\f12a";
 }
 
-.NavMenu a[href^="/backuppc/index.cgi?action=editConfig&host="]:before {
+.NavMenu a[href*="/index.cgi?action=editConfig&host="]::before {
     content:"\f1de";
 }
 
 /* Server */
-.NavMenu a[href="/backuppc/index.cgi?action=status"]:before {
+.NavMenu a[href*="/index.cgi?action=status"]::before {
     content:"\f21e";
 }
 
-.NavMenu a[href="/backuppc/index.cgi?action=summary"]:before {
+.NavMenu a[href*="/index.cgi?action=summary"]::before {
     content:"\f233";
 }
 
-.NavMenu a[href="/backuppc/index.cgi?action=editConfig"]:before {
+.NavMenu a[href*="/index.cgi?action=editConfig"]::before {
     content:"\f1de";
 }
 
-.NavMenu a[href="/backuppc/index.cgi?action=editConfig&newMenu=hosts"]:before {
+.NavMenu a[href*="/index.cgi?action=editConfig&newMenu=hosts"]::before {
     content:"\f0ad";
 }
 
-.NavMenu a[href="/backuppc/index.cgi?action=adminOpts"]:before {
+.NavMenu a[href*="/index.cgi?action=adminOpts"]::before {
     content:"\f023";
 }
 
-.NavMenu a[href="/backuppc/index.cgi?action=view&type=LOG"]:before {
+.NavMenu a[href*="/index.cgi?action=view&type=LOG"]::before {
     content:"\f15c";
 }
 
-.NavMenu a[href="/backuppc/index.cgi?action=LOGlist"]:before {
+.NavMenu a[href*="/index.cgi?action=LOGlist"]::before {
     content:"\f187";
 }
 
-.NavMenu a[href="/backuppc/index.cgi?action=emailSummary"]:before {
+.NavMenu a[href*="/index.cgi?action=emailSummary"]::before {
     content:"\f0e0";
 }
 
-.NavMenu a[href="/backuppc/index.cgi?action=queue"]:before {
+.NavMenu a[href*="/index.cgi?action=queue"]::before {
     content:"\f021";
 }
 
-.NavMenu a[href="/backuppc/index.cgi?action=view&type=docs"]:before {
+.NavMenu a[href*="/index.cgi?action=view&type=docs"]::before {
     content:"\f02d";
 }
 
-.NavMenu a[href="https://github.com/backuppc/backuppc/wiki"]:before {
+.NavMenu a[href="https://github.com/backuppc/backuppc/wiki"]::before {
     content:"\f08e";
 }
 
