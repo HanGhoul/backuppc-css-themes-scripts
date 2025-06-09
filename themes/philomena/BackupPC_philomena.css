@@ -65,7 +65,7 @@
     --font-h1: var(--font-h-weight) 24px/var(--font-h-height) var(--font-sans-family);
     --font-h2: var(--font-h-weight) 20px/var(--font-h-height) var(--font-sans-family);
     --font-h3: var(--font-h-weight) 17px/var(--font-h-height) var(--font-sans-family);
-    
+
     /* Table headings */
     --font-thead: 450 1.3em/1.6em "Roboto Condensed";
 
@@ -132,12 +132,12 @@
     --form-input-clr-bg-active: #313947;
     --form-input-clr-border: #5f636a;
     --form-input-clr-border-active: #647493;
-    
+
     --form-select-clr-bg: #141a24;
     --form-select-clr-bg-hover: #313947;
     --form-select-clr-border: #5f636a;
     --form-select-clr-border-hover: #5f636a;
-    
+
     --form-button-clr-bg: #1a4c6b;
     --form-button-clr-bg-hover: #153d56;
     --form-button-clr-border: #117abb;
@@ -214,12 +214,13 @@ pre {
     background-color: var(--nav-clr-bg-line1);
 }
 
-#logo-container        { grid-area: 1 / 1 / 2 / 2; background-color: var(--nav-clr-bg-line1); padding-left: var(--padding-scale-4); min-height: var(--logo-height); height: var(--nav-min-height-line1); }  /* Logo */
-#NavMenu > select      { grid-area: 1 / 2 / 2 / 3; background-color: var(--nav-clr-bg-line1); padding-left: var(--padding-scale-1); min-height: var(--logo-height); height: var(--nav-min-height-line1); }  /* Hosts Selection */
-.NavMenu.section-title { grid-area: 2 / 1 / 3 / 2; background-color: var(--nav-clr-bg-line2); padding-left: var(--padding-scale-4); min-height: var(--nav-min-height-line2); }  /* Host Heading */
-.NavMenu.host          { grid-area: 2 / 2 / 3 / 3; background-color: var(--nav-clr-bg-line2);                                       min-height: var(--nav-min-height-line2); }  /* Host Menu */
-#NavMenu.NavMenu h2    { grid-area: 3 / 1 / 4 / 2; background-color: var(--nav-clr-bg-line3); padding-left: var(--padding-scale-4); min-height: var(--nav-min-height-line3); }  /* Server Heading */
-#NavMenu.NavMenu       { grid-area: 3 / 2 / 4 / 3; background-color: var(--nav-clr-bg-line3);                                       min-height: var(--nav-min-height-line3); }  /* Server Menu */
+#logo-container        { grid-area: 1 / 1 / 2 / 2; background-color: var(--nav-clr-bg-line1); padding-left: var(--padding-scale-4);  min-height: var(--logo-height); height: var(--nav-min-height-line1); }  /* Logo */
+#NavMenu > select      { /* Static, see below */   background-color: var(--nav-clr-bg-line1); padding-left: var(--padding-scale-1);  min-height: var(--logo-height); height: var(--nav-min-height-line1); }  /* Hosts Selection */
+#NavMenu > form        { /* Static, see below */   background-color: var(--nav-clr-bg-line1); padding-right: var(--padding-scale-1); min-height: var(--logo-height); }  /* Hosts Search Form */
+.NavMenu.section-title { grid-area: 2 / 1 / 3 / 2; background-color: var(--nav-clr-bg-line2); padding-left: var(--padding-scale-4);  min-height: var(--nav-min-height-line2); }  /* Host Heading */
+.NavMenu.host          { grid-area: 2 / 2 / 3 / 3; background-color: var(--nav-clr-bg-line2);                                        min-height: var(--nav-min-height-line2); }  /* Host Menu */
+#NavMenu.NavMenu h2    { grid-area: 3 / 1 / 4 / 2; background-color: var(--nav-clr-bg-line3); padding-left: var(--padding-scale-4);  min-height: var(--nav-min-height-line3); }  /* Server Heading */
+#NavMenu.NavMenu       { grid-area: 3 / 2 / 4 / 3; background-color: var(--nav-clr-bg-line3);                                        min-height: var(--nav-min-height-line3); }  /* Server Menu */
 
 /* Center Elements */
 #logo-container,
@@ -280,6 +281,13 @@ pre {
 #NavMenu > select:hover,
 #NavMenu > select:focus {
     background-color: var(--nav-clr-link-bg-line1-hover);
+}
+
+/* Hosts Search Form */
+#NavMenu > form {
+    position: absolute;
+	top: 0;
+    right: 0;
 }
 
 /* Links */
@@ -409,7 +417,7 @@ a.sortheader:hover,
 /* Editor tab links */
 .editTabNoSel a:hover,
 .editTabSel a:hover {
-    text-decoration: none !important; 
+    text-decoration: none !important;
     color: var(--table-clr-head-link-hover) !important;
     background: var(--table-clr-head-hover) !important;
 }
@@ -545,7 +553,7 @@ span.editError:empty:first-child {
     background-color: var(--table-clr-head-bg) !important
 }
 .editTabSel a b {
-    font-weight: unset; 
+    font-weight: unset;
 }
 
 /* Inactive tab */
